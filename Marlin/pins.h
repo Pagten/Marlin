@@ -1471,6 +1471,73 @@
 
 #endif
 
+/****************************************************************************************
+* Yarb 0.1 pin assignment
+*
+****************************************************************************************/
+
+
+#if MOTHERBOARD == 88
+#define KNOWN_BOARD
+
+#if !defined(__AVR_ATmega1284P__)
+#error Oops! Make sure you are compiling for ATmega1284p.
+#endif
+
+
+//x axis pins
+#define X_ENABLE_PIN 24
+#define X_STEP_PIN 26
+#define X_DIR_PIN 25
+
+
+//y axis pins
+#define Y_ENABLE_PIN 24
+#define Y_STEP_PIN 23
+#define Y_DIR_PIN 22
+
+
+//z axis pins
+#define Z_ENABLE_PIN 21
+#define Z_STEP_PIN 20
+#define Z_DIR_PIN 19
+
+//endstop pins
+#define X_STOP_PIN 0
+#define Y_STOP_PIN 1
+#define Z_STOP_PIN 2
+
+//extruder pins
+#define E0_ENABLE_PIN 18
+#define E0_STEP_PIN 17
+#define E0_DIR_PIN 16
+
+//thermistor pins
+#define TEMP_0_PIN 4
+#define TEMP_1_PIN -1
+#define TEMP_2_PIN -1
+#define TEMP_BED_PIN 3
+
+//heater pins
+#define HEATER_0_PIN 3
+#define HEATER_1_PIN -1
+#define HEATER_2_PIN -1
+#define HEATER_BED_PIN 4
+
+#define SDPOWER       -1
+#define SDSS          -1
+#define LED_PIN       -1
+#define FAN_PIN       -1
+#define PS_ON_PIN     -1
+#define KILL_PIN      -1
+#define DEBUG_PIN     -1
+
+
+#endif
+/****************************************************************************************
+****************************************************************************************/
+
+
 #ifndef KNOWN_BOARD
 #error Unknown MOTHERBOARD value in configuration.h
 #endif

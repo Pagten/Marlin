@@ -37,19 +37,19 @@
 # from the commandline with "make HARDWARE_MOTHERBOARD=71" for example
 
 # This defined the board you are compiling for (see Configuration.h for the options)
-HARDWARE_MOTHERBOARD ?= 11
+HARDWARE_MOTHERBOARD ?= 88
 
 # Arduino source install directory, and version number
-ARDUINO_INSTALL_DIR  ?= ../../arduino-0022
-ARDUINO_VERSION      ?= 22
+ARDUINO_INSTALL_DIR  ?= ../../arduino
+ARDUINO_VERSION      ?= 103
 
 # You can optionally set a path to the avr-gcc tools. Requires a trailing slash. (ex: /usr/local/avr-gcc/bin)
 AVR_TOOLS_PATH ?= 
 
 #Programmer configuration
 UPLOAD_RATE        ?= 115200
-AVRDUDE_PROGRAMMER ?= arduino
-UPLOAD_PORT        ?= /dev/arduino
+AVRDUDE_PROGRAMMER ?= usbasp
+UPLOAD_PORT        ?= /dev/ttyS0
 
 #Directory used to build files in, contains all the build files, from object files to the final hex file.
 BUILD_DIR          ?= applet
@@ -58,7 +58,7 @@ BUILD_DIR          ?= applet
 # Below here nothing should be changed...
 
 # Here the Arduino variant is selected by the board type
-# HARDWARE_VARIANT = "arduino", "Sanguino", "Gen7", ...
+# HARDWARE_VARIANT = "arduino", "Sanguino", "Gen7", "Yarb", ...
 # MCU = "atmega1280", "Mega2560", "atmega2560", "atmega644p", ...
 
 #Gen7
@@ -158,6 +158,12 @@ MCU              ?= atmega644p
 else ifeq  ($(HARDWARE_MOTHERBOARD),301)
 HARDWARE_VARIANT ?= arduino
 MCU              ?= atmega2560
+
+#Yarb
+else ifeq  ($(HARDWARE_MOTHERBOARD),88)
+HARDWARE_VARIANT ?= Yarb
+MCU              ?= atmega1284p
+F_CPU            ?= 20000000
 
 endif
 

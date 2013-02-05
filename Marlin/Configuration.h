@@ -44,6 +44,7 @@
 // 90 = Alpha OMCA board
 // 91 = Final OMCA board
 // 301 = Rambo
+// 88 = Yarb
 
 #ifndef MOTHERBOARD
 #define MOTHERBOARD 7
