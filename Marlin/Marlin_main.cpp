@@ -647,6 +647,12 @@ static void homeaxis(int axis) {
 }
 #define HOMEAXIS(LETTER) homeaxis(LETTER##_AXIS)
 
+#define TLT_DEBUG
+#ifdef TLT_DEBUG
+extern int current_temperature_raw[EXTRUDERS];
+extern int current_temperature_bed_raw;
+#endif
+
 void process_commands()
 {
   unsigned long codenum; //throw away variable
@@ -1018,6 +1024,13 @@ void process_commands()
         SERIAL_PROTOCOL(getHeaterPower(-1));  
 
         SERIAL_PROTOCOLLN("");
+        #ifdef TLT_DEBUG
+          SERIAL_ECHO_START(" TLTDEBUG ");
+          SERIAL_ECHO("T0 ADC: ");
+          SERIAL_ECHO(current_temperature_raw[0]);
+          SERIAL_ECHO(" Bed ADC: ");
+          SERIAL_ECHOLN(current_temperature_bed_raw);
+        #endif //TLT_DEBUG
       return;
       break;
     case 109: 
