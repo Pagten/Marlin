@@ -1629,10 +1629,10 @@
 #define E0_DIR_PIN 16
 
 //thermistor pins
-#define TEMP_0_PIN 4
+#define TEMP_0_PIN 3
 #define TEMP_1_PIN -1
 #define TEMP_2_PIN -1
-#define TEMP_BED_PIN 3
+#define TEMP_BED_PIN 4
 
 //heater pins
 #define HEATER_0_PIN 3

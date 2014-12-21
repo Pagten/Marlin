@@ -85,10 +85,10 @@
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan) (1k pullup)
 
-#define TEMP_SENSOR_0 88
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_BED 3
+#define TEMP_SENSOR_BED 88
 
 // Actual temperature must be close to target for this long before M109 returns success
 #define TEMP_RESIDENCY_TIME 10	// (seconds)
@@ -106,9 +106,9 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
+#define HEATER_0_MAXTEMP 295
+#define HEATER_1_MAXTEMP 295
+#define HEATER_2_MAXTEMP 295
 #define BED_MAXTEMP 150
 
 // If your bed has low resistance e.g. .6 ohm and throws the fuse you can duty cycle it to reduce the
@@ -286,7 +286,8 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // default settings 
 
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200*8/3,760*1.1}  // default steps per unit for ultimaker 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0, 80.0, 2560.0, 975.89} 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0, 80.0, 2560.0, 826.56} 
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {40.0, 40.0, 2560.0, 413.28} 
 //#define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 25}    // (mm/sec)
 #define DEFAULT_MAX_FEEDRATE          {100, 100, 4, 10}    // (mm/sec)        
 //#define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
@@ -305,9 +306,12 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // #define EXTRUDER_OFFSET_Y {0.0, 5.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instanteneously)
-#define DEFAULT_XYJERK                20.0    // (mm/sec)
-#define DEFAULT_ZJERK                 0.4     // (mm/sec)
-#define DEFAULT_EJERK                 5.0    // (mm/sec)
+//#define DEFAULT_XYJERK                20.0    // (mm/sec)
+//#define DEFAULT_ZJERK                 0.4     // (mm/sec)
+//#define DEFAULT_EJERK                 5.0    // (mm/sec)
+#define DEFAULT_XYJERK                15.0    // (mm/sec)
+#define DEFAULT_ZJERK                 0.3     // (mm/sec)
+#define DEFAULT_EJERK                 4.0    // (mm/sec)
 
 //===========================================================================
 //=============================Additional Features===========================

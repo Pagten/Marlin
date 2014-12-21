@@ -8,7 +8,7 @@
 #ifdef BED_LIMIT_SWITCHING
   #define BED_HYSTERESIS 2 //only disable heating if T>target+BED_HYSTERESIS and enable heating if T>target-BED_HYSTERESIS
 #endif
-#define BED_CHECK_INTERVAL 5000 //ms between checks in bang-bang control
+#define BED_CHECK_INTERVAL 1000 //ms between checks in bang-bang control
 
 //// Heating sanity check:
 // This waits for the watchperiod in milliseconds whenever an M104 or M109 increases the target temperature
@@ -160,6 +160,7 @@
 
 //default stepper release if idle
 #define DEFAULT_STEPPER_DEACTIVE_TIME 60
+//#define DEFAULT_STEPPER_DEACTIVE_TIME 0
 
 #define DEFAULT_MINIMUMFEEDRATE       0.0     // minimum feedrate
 #define DEFAULT_MINTRAVELFEEDRATE     0.0
